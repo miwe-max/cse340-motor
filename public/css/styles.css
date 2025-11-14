@@ -23,14 +23,16 @@
   box-sizing: border-box;
 }
 
+
+
 /* The About page stylesheet */
 body {
   font-family: "Roboto", sans-serif;
- 
+
   margin: 0 auto;
   position: relative;
   display: flex;
-  
+
   flex-direction: column;
 
   /* border: 2px solid var(--primary-color); */
@@ -51,7 +53,7 @@ header {
   background-color: #0f3f5f;
   opacity: 0.8;
   padding: 1rem;
- 
+
   color: #ffffff;
   justify-content: space-between;
 
@@ -78,43 +80,46 @@ nav ul {
   background-color: var(--primary-color);
 }
 
-.navigation {
+ 
+
+#navigation {
   list-style: none;
   width: 90%;
   margin: 0 auto;
 }
 
-.navigation {
+  #navigation {
   position: relative;
   display: flex;
-  
+
   flex-wrap: wrap;
   align-items: center;
-  
+
   justify-content: space-between;
   gap: 10px;
   padding: 15px;
   transition: 0.5s;
- 
+
 }
 
-.navigation a, .site-head {
+#navigation a, .site-head {
   text-decoration: none;
   color: #fff;
   font-weight: 400;
   font-size: clamp(1rem, 2vmin, 1.5rem);
 }
 
-.navigation a:hover,
-navigation a:active {
-  color: white;
-  transform: scale(1.1);
-  background-color: var(--primary-color);
+
+
+
+#navigation li a:hover {
+  color: red;
+  
 }
 
 
 
-ul .active {
+ #active a {
   background-color: var(--primary-color);
   color: yellow;
 }
@@ -123,14 +128,14 @@ ul .active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
@@ -143,8 +148,8 @@ ul .active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
- 
- 
+
+
 
 }
 .card{
@@ -155,7 +160,7 @@ ul .active {
   background-color: #f9f9f9;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +171,7 @@ ul .active {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+
   justify-content: center;
   gap: 10px;
 }
@@ -179,9 +184,9 @@ ul .active {
 .description{
   display: flex;
   flex-direction: column;
- 
+
   align-items: center;
- 
+
   gap: 10px;
 }
 
@@ -191,7 +196,7 @@ ul .active {
   align-items: center;
   justify-content: center;
 
-  
+
 }
 .btn-get-started {
   font-family: "Roboto", sans-serif;
@@ -210,8 +215,8 @@ ul .active {
 .items{
   display: flex;
   z-index: 997;
- 
- 
+
+
   flex-direction: column;
   list-style: none;
   align-items: center;
@@ -219,12 +224,12 @@ ul .active {
   opacity: 0.7;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
- 
+
   justify-content: center;
   gap: 10px;
   height: auto;
-  
-  
+
+
 }
 .items li{
   color: #013a63;
@@ -238,7 +243,7 @@ ul .active {
 .items .car-name{
   font-weight: bold;
   font-size: 2rem;
- 
+
 }
 .features{
   display: grid;
@@ -259,4 +264,114 @@ ul .active {
   border-radius: 10px;
   padding: 20px;
   width: 100%;
+}
+
+.page-not-found{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+.page-not-found h1{
+  font-size: 3rem;
+  color: #013a63;
+  font-style: italic;
+  
+}
+
+.page-not-found img{
+  width: 50%;
+  height: auto;
+}
+
+/* Styling the Grid Inventory Page */
+
+#inv-display {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto; /* Center the grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    max-width: 1200px; /* Optional: Limit the grid width */
+}
+
+#inv-display li {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#inv-display li:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#inv-display li img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#inv-display li .namePrice {
+    padding: 15px;
+    text-align: center;
+}
+
+#inv-display li .namePrice hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+#inv-display li .namePrice h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+#inv-display li .namePrice h2 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+#inv-display li .namePrice h2 a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+#inv-display li .namePrice span {
+    font-weight: bold;
+    color: #555;
+}
+
+.notice {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #inv-display {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    #inv-display li .namePrice {
+        padding: 10px;
+    }
+
+    #inv-display li .namePrice h2 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #inv-display {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
 }
