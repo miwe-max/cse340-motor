@@ -2,7 +2,33 @@
 const express = require("express")
 const router = new express.Router() 
 const accountController = require("../controllers/accountController")
+const utilities = require("../utilities/")
 
+const regValidate = require('../utilities/account-validation')
+
+// Route to build inventory by classification view
+// router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId))
+// router.get("/detail/:inventoryId", invController.buildByInventoryId)
+// router.get("/generate-error", invController.generateError)
+router.get("/login", utilities.handleErrors(accountController.buildLogin) )
+router.get("/register", utilities.handleErrors(accountController.buildRegister))
+
+router.post('/register',regValidate.registationRules(),regValidate.checkRegData, utilities.handleErrors(accountController.registerAccount))
+router.post('/login', utilities.handleErrors(accountController.loginAccount))
+
+
+module.exports = router;
+
+
+
+
+
+
+
+/* Needed Resources 
+const express = require("express")
+const router = new express.Router() 
+const accountController = require("../controllers/accountController")
 const utilities = require("../utilities/")
 const authMiddleware = require("../middleware/authMiddleware")
 const regValidate = require('../utilities/account-validation')
@@ -27,4 +53,4 @@ router.get("/management", authMiddleware.checkLogin, utilities.handleErrors(acco
 
 // Process Password Change
 router.post('/change-password', authMiddleware.checkLogin,regValidate.changePasswordValidationRules(),regValidate.checkUpdatePasswordData, utilities.handleErrors(accountController.changePasswordProcess));
-module.exports = router;
+module.exports = router; */
