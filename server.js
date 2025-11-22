@@ -14,7 +14,7 @@ const inventoryRoute = require('./routes/inventoryRoute'); // Adjust path as nee
 const accountRoute = require('./routes/accountRoute'); // Adjust path as needed
 const utilities = require("./utilities/")
 const session = require("express-session")
-const pool = require("./database/")
+const pool = require('./database/')
 
 const baseController = require("./controllers/baseController")
 const bodyParser = require("body-parser")
@@ -46,7 +46,6 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
-
 
 /* ***********************
  * View Engine and Templates
@@ -84,6 +83,7 @@ app.use(async (req, res, next) => {
 
 
 
+
 /* ***********************
 * Express Error Handler
 * Place after all other middleware
@@ -96,7 +96,7 @@ app.use(async (err, req, res, next) => {
   if(err.status == 500){ 
     message = err.message
     status = err.status
-
+   
 
   } else {message = 'Oh no! There was a crash. This is an internal server error?'}
   res.render("errors/error", {
